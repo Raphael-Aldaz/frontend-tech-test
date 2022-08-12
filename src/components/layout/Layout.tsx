@@ -1,24 +1,14 @@
 /* eslint-disable no-console */
 
-import { useQueries, useQuery } from 'react-query';
-import clsx from 'clsx';
-import { getStaticProps } from 'src/pages';
+import { useQuery } from 'react-query';
 import Cms from 'src/services/Cms';
 
 import Footer from './Footer';
+import FullPageLoader from '../FullPageLoader';
 import Header from './Header';
 import Slider from './Slider';
 
-import FullPageLoader from '$components/FullPageLoader';
-
 function Layout({ children }: { children: React.ReactNode }): JSX.Element {
- /*  const results = useQueries({
-    queries: [
-      {queryKey:['test1'], queryFn: Cms.getConfig()},
-      {queryKey:['test2'], queryFn: Cms.getPageContent('home')}
-    ]
-  });
-  console.log(results,'ta mére') */
   /*************** **********
    * Function find
    * *******************/
@@ -51,14 +41,15 @@ function Layout({ children }: { children: React.ReactNode }): JSX.Element {
   if (isLoading) {
     return <FullPageLoader />;
   }
-  
   return (
     <>
       <div className="flex min-h-screen w-full flex-col gap-10 overflow-hidden bg-red-800 relative ">
         <Header header={menuItem.header} />
         <main
-          className={clsx('mx-auto flex w-full flex-grow flex-col content-spacer overflow-hidden')}
+          /* className={clsx('mx-auto flex w-full flex-grow flex-col content-spacer overflow-hidden')} */
+          className="w-screen h-screen bg-white"
         >
+          {/* <Slider data={sliderData} /> */}
           <Slider data={sliderData} />
         </main>
         <Footer />

@@ -4,7 +4,7 @@ import clsx from 'clsx';
 function Header({ header }): JSX.Element {
   const menuitems = header.menuItems;
   return (
-    <nav className="border-2 border-emerald-500 fixed top-0 left-0 right-0 h-30 flex justify-between items-center bg-transparent ">
+    <nav className="border-2 border-emerald-500 fixed top-0 left-0 right-0 h-30 flex justify-between items-center bg-transparent z-100 ">
       <ul className="flex p-4 justify-around items-center">
         {menuitems.map((item) => (
           <li
