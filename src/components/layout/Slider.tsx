@@ -21,10 +21,7 @@ const Element = styled.div`
 function Slider({ data }) {
   const sliderData = data || [];
   const items = sliderData.items || [];
-  
 
-  /* const widthDeviceMobile = window.matchMedia('(max-width: 680px)').matches;
-  const widthDeviceDesktop = window.matchMedia('(min-width: 680px)').matches; */
   return (
     <div className="relative bg-lime-800">
       <Swiper
