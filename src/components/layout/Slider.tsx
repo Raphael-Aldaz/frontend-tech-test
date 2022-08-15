@@ -11,20 +11,22 @@ const Element = styled.div`
   background-size: 100% 100vh;
   background-repeat: no-repeat;
   background-image: url(${(props) => props.bgImgMobile});
-  filter: brightness(50%);
+  filter: brightness(40%);
   @media screen and (min-width: 650px) {
     background-image: url(${(props) => props.bgImgDesktop});
+    height: 840px;
   }
 `;
 
 function Slider({ data }) {
   const test = data || [];
   const items = test.items || [];
+  
 
   /* const widthDeviceMobile = window.matchMedia('(max-width: 680px)').matches;
   const widthDeviceDesktop = window.matchMedia('(min-width: 680px)').matches; */
   return (
-    <div className="relative">
+    <div className="relative bg-lime-800">
       <Swiper
         loop={true}
         autoplay={{ delay: 4000 }}

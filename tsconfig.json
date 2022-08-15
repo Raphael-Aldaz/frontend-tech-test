@@ -27,6 +27,6 @@
     "importHelpers": true,
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Slider/Slider.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Slider/Slider.jsx", "src/components/layout/Slider.jsx"],
   "exclude": ["node_modules"]
 }

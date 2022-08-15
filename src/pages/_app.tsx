@@ -8,6 +8,7 @@ import NextNProgress from 'nextjs-progressbar';
 import { ViewportProvider } from '@onrewind/ui';
 
 import '../styles.css';
+import 'semantic-ui-css/semantic.min.css';
 
 import Layout from '$components/layout';
 

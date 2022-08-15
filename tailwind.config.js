@@ -14,7 +14,7 @@ module.exports = {
   theme: {
     fontFamily: {
       title: ['graphik-regular', ...defaultTheme.fontFamily.sans],
-      body: ['Headline', ...defaultTheme.fontFamily.sans],
+      body: ['graphik-regular', ...defaultTheme.fontFamily.sans],
       sans: ['graphik-bold', ...defaultTheme.fontFamily.sans],
     },
     screens: {
