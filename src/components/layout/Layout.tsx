@@ -4,6 +4,7 @@ import { useQuery } from 'react-query';
 import Cms from 'src/services/Cms';
 
 import FullPageLoader from '../FullPageLoader';
+import AdSection from './AdSection';
 import Carousel from './Carousel';
 import Footer from './Footer';
 import Header from './Header';
@@ -22,6 +23,12 @@ function Layout({ children }: { children: React.ReactNode }): JSX.Element {
   function findCaroussel(array: any[]): any {
     const result = array.find(
       (type: { _kenticoItemType: string }) => type._kenticoItemType === 'section_static_carousel',
+    );
+    return result;
+  }
+  function findAd(array: any[]): any {
+    const result = array.find(
+      (type: { _kenticoItemType: string }) => type._kenticoItemType === 'section_static_ad',
     );
     return result;
   }
@@ -48,6 +55,7 @@ function Layout({ children }: { children: React.ReactNode }): JSX.Element {
   const sliderItemArray = slidersItem.components || [];
   const sliderData = findSlider(sliderItemArray);
   const carouselData = findCaroussel(sliderItemArray);
+  const addData = findAd(sliderItemArray)
 
   if (isLoading || sliderLoading) {
     return <FullPageLoader />;
@@ -59,6 +67,7 @@ function Layout({ children }: { children: React.ReactNode }): JSX.Element {
         <main /* className={clsx('mx-auto flex w-full flex-grow flex-col content-spacer overflow-hidden')} */
         >
           <Slider data={sliderData} />
+          <AdSection addData={addData} />
           <Carousel data={carouselData} />
         </main>
         <Footer footerData={menuItem.footer} />
