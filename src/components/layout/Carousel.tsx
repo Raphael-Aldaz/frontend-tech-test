@@ -19,7 +19,7 @@ function Carousel({ data }): JSX.Element {
   const dataItems = data.items || [];
   console.log(dataItems, 'dataitems');
   return (
-    <div className="ml-[27px]">
+    <div className="ml-[27px] mt-10">
       <h1 className="uppercase">Static - Portrait</h1>
       <CarouselWrapper className=" flex overflow-scroll gap-[16px]  ">
         {dataItems.map((item) => (
