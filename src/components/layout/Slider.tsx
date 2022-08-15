@@ -19,8 +19,8 @@ const Element = styled.div`
 `;
 
 function Slider({ data }) {
-  const test = data || [];
-  const items = test.items || [];
+  const sliderData = data || [];
+  const items = sliderData.items || [];
   
 
   /* const widthDeviceMobile = window.matchMedia('(max-width: 680px)').matches;
